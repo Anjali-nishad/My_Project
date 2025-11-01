@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container my-5">
+    <div class="row bg-white p-4 rounded shadow-sm">
+        <!-- Product Image -->
+        <div class="col-md-6 mb-4 mb-md-0">
+            <img src="{{ product.image.url }}" class="img-fluid rounded" alt="Xiaomi 15 Smartphone">
+        </div>
+
+        <!-- Product Details -->
+        <div class="col-md-6">
+            <h2 class="mb-3">{{ product.name }}</h2>
+            <p><strong>Category:</strong>{{ product.category }}</p>
+            <p><strong>Phone Model:</strong> {{ product.about }}</p>
+            <p class="h4 text-primary mb-3">₹{{ product.price }}</p>
+            <p>
+                {{ product.description}}
+            </p>
+            <button class="btn btn-success">
+               <a href="{% url 'add_to_cart' product.id %}" class="text-light"><i class="fas fa-shopping-cart me-2 "></i> Add to Cart</a>
+            </button>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,139 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" rel="stylesheet"/>
+
+<style>
+.card{
+box-shadow: 5px 6px 15px 2px black;
+height: 350px;
+width: 400px;
+margin-top:50px;
+margin-right:80px;
+    }
+       body {
+      background-color: black;
+
+    }
+    nav navbar ul li a{
+    color;black;
+    }
+</style>
+</head>
+<body>
+
+    <div class="container-fluid">
+        <div class="row bg-dark" style="height:40px;">
+            <div class="col-sm-4 text-light ps-5">contact|faq|about</div>
+            <div class="col-sm-4 text-light">91+8528229110, 91+9793556153,</div>
+            <div class="col-sm-4 text-light mt-2">
+                <i class="fa-brands fa-facebook fa-spin fa-1x"></i>
+           <i class="fa-brands fa-instagram fa-spin fa-1x"></i>
+           <i class="fa-brands fa-google fa-spin fa-1x"></i>
+           <i class="fa-solid fa-envelope fa-spin fa-1x"></i>
+            </div>
+            </div>
+</div>
+        <!--nav start -->
+
+        <div class="container-fluid">
+            <div class="row bg-light">
+                <div class="col-sm-12 mb-0">
+                    <nav class="navbar navbar-expand-lg bg-body-tertiary ">
+  <div class="container-fluid">
+      <a class="navbar-brand text-dark" href="#"><b style="font-size:30px;font-family:cursive;">Electric</b > <span style="color:#FFD700;"> Zone</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse " id="navbarNavDropdown" style="font-size:20px;">
+      <ul class="navbar-nav ">
+        <li class="nav-item">
+          <a class="nav-link active text-dark" aria-current="page" href="/index/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="/product/">Product</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="#"></a>
+        </li>
+        <li class="nav-item">
+    <a class="nav-link text-dark" href="/about/">About</a>
+        </li>
+           <li class="nav-item">
+          <a class="nav-link text-dark" href="#"></a>
+        </li>
+        <li class="nav-item">
+    <a class="nav-link text-dark text-dark" href="/register/">register</a>
+        </li>
+          <!--cart item
+               <li class="nav-item" style="margin-left:600px;">
+    <a class="nav-link text-dark" href="/add_to_cart/">cart<i class="fas fa-shopping-cart me-2 "></i> </a>
+        </li>
+        -->
+      </ul>
+    </div>
+  </div>
+</nav>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- nav end-->
+        <!--slider start -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                {% block content %}
+
+             {%  endblock %}
+            </div>
+        </div>
+    </div>
+
+    <!--footer start-->
+<div class="row  mt-4 p-4 " style="height:400px;background-color:#2B2D30;">
+    <div class="col-sm-3 text-light  p-4">
+        <h4>Your Logo</h4>
+        <p>Your Tagline here</p>
+        <h6>Your Subscribe Now</h6>
+        <form>
+            <input type="email"
+                   class="form-control mb-3" placeholder="Enter your Email">
+            <button class="btn btn-success border ">Subscribe</button>
+
+        </form>
+    </div>
+          <div class="col-sm-3 text-light  p-4">
+        <h4>Information</h4>
+        <p>About Us</p>
+        <h6>More Search</h6>
+              <h6>Blog</h6>
+                   Testimonials
+                    <p>Events</p>
+    </div>
+      <div class="col-sm-3 text-light  p-4">
+        <h4>Our Services</h4>
+        <p>Brand list</p>
+          <p>Order</p>
+          <p>Return & Exchange</p>
+          <p>Fashion List</p>
+          <p>Blog</p>
+
+    </div>
+      <div class="col-sm-3 text-light  p-4">
+        <h4>Contact Us</h4>
+        <p> <i class="fa-solid fa-phone rounded-pil fa-1x"></i> +91 9555922486</p>
+        <p>Your Email id.com</p>
+          <i class="fa-brands fa-facebook rounded-pil fa-2x text-primary"></i>
+           <i class="fa-brands fa-instagram rounded-pil fa-2x text-primary"></i>
+           <i class="fa-brands fa-google rounded-pil fa-2x text-primary"></i>
+           <i class="fa-solid fa-envelope rounded-pil fa-2x text-primary"></i>
+    </div>
+</div>
+</body>
+</html>

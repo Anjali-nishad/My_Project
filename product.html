@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+  body {
+    background-color: #000;
+  }
+  .category-card {
+    background-color: #1a1a1a;
+    border: none;
+    border-radius: 12px;
+    transition: transform 0.2s;
+    color: #fff;
+  }
+  .category-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #ffd70050;
+  }
+  .category-img {
+    height: 120px;
+    object-fit: contain;
+  }
+  .btn-yellow {
+    background-color: #FFD700;
+    color: #000;
+    border: none;
+  }
+</style>
+
+<!-- Category Section -->
+<section class="container py-5">
+  <h2 class="text-center mb-5 text-warning">Shop Now</h2>
+  <div class="row g-4">
+
+    {% for product in products %}
+    <div class="col-md-4">
+      <div class="card category-card text-center p-4">
+        <img src="{{ product.image.url }}" alt="{{ product.name }}" class="category-img mx-auto mb-3" />
+        <h5>{{ product.name }}</h5>
+        <p>{{ product.about|truncatechars:80 }}</p>
+        <a href="{% url 'detail' product.id %}" class="btn btn-yellow mt-2">View Details</a>
+        <a href="{% url 'add_to_cart' product.id %}" class="btn btn-outline-warning mt-2">Add to Cart</a>
+      </div>
+    </div>
+    {% empty %}
+    <p class="text-light text-center">No products found.</p>
+    {% endfor %}
+
+  </div>
+</section>
+
+{% endblock %}

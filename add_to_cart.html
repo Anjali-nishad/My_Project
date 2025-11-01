@@ -1,0 +1,66 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+*{
+}
+</style>
+
+<!-- Page Content -->
+<div class="container my-5 ">
+  <h2 class="mb-4 text-center text-warning">Your Cart Here</h2>
+
+  <div class="row">
+    <!-- Product Image -->
+    <div class="col-md-4">
+      <img src="{{ product.image.url }}" class="img-fluid rounded" alt="Product">
+    </div>
+
+    <!-- Product Details -->
+    <div class="col-md-8 text-light">
+      <h3>{{ product.name }}</h3>
+      <p>{{ product.about }}</p>
+      <h4 class="text-success mb-3">₹ {{ product.price }}</h4>
+
+      <!-- Quantity -->
+<div class="mb-3 text-light">
+  <label for="qty" class="form-label">Quantity</label>
+  <input type="number" id="qty" class="form-control w-25" value="1" min="1">
+</div>
+
+    </div>
+  </div>
+
+  <!-- Cart Summary -->
+  <div class="mt-5 text-light">
+    <h4>{{ product.description}}</h4>
+    <ul class="list-group">
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        {{ product.name }}
+        <span class="badge bg-primary rounded-pill">₹{{ product.price }}</span>
+      </li>
+    </ul>
+
+    <!-- Total and Checkout -->
+    <div class="d-flex justify-content-between align-items-center mt-4">
+      <h5><span class="text-warning">Total:</span> ₹<span id="total">{{ product.price }}</span></h5>
+
+      <a href="/checkout/" class="btn btn-success">Proceed to Checkout</a>
+    </div>
+  </div>
+</div>
+<script>
+  const qtyInput = document.getElementById('qty');
+  const totalDisplay = document.getElementById('total');
+  const price = {{ product.price }};  // from Django context
+
+  qtyInput.addEventListener('input', () => {
+    let qty = parseInt(qtyInput.value) || 1;
+    if (qty < 1) qty = 1;
+    const total = qty * price;
+    totalDisplay.textContent = total.toLocaleString('en-IN'); // ₹ formatting
+  });
+</script>
+
+{% endblock %}
